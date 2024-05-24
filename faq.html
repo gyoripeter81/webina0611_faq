@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ</title>
+  <style>
+    .faq-container {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border: 1px solid #ddd;
+      font-weight: bold;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-top: none;
+      background-color: #fafafa;
+    }
+
+    .faq-question.active + .faq-answer {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">Miért fontos minőségi arclemosót használni?</div>
+      <div class="faq-answer">Az arclemosók többsége olyan alkotóelemeket tartalmaz, melyek száríthatják a bőrt, ezért mindig érdemes olyat választani, amely ezen alapanyagokat nem tartalmazza.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">Másik kérdés?</div>
+      <div class="faq-answer">Másik válasz...</div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(item => {
+      item.addEventListener('click', event => {
+        item.classList.toggle('active');
+        let answer = item.nextElementSibling;
+        if (answer.style.display === 'block') {
+          answer.style.display = 'none';
+        } else {
+          answer.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
